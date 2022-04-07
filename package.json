@@ -1,0 +1,24 @@
+{
+  "name": "backend-challenge",
+  "version": "0.0.0",
+  "main": "index.js",
+  "description": "E-commerce para venda de camisetas, canecas e adesivos",
+  "author": "Pâmela Vieira da Silva",
+  "license": "MIT",
+  "private": "true",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/panhavsilva/backend-challenge.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/panhavsilva/backend-challenge/issues"
+  },
+  "homepage": "https://github.com/panhavsilva/backend-challenge#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "typescript": "4.6.3"
+  }
+}
