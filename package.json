@@ -20,5 +20,8 @@
   },
   "devDependencies": {
     "typescript": "4.6.3"
+  },
+  "dependencies": {
+    "fastify": "3.28.0"
   }
 }
