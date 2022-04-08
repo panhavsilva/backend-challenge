@@ -17,19 +17,21 @@
   "homepage": "https://github.com/panhavsilva/backend-challenge#readme",
   "scripts": {
     "start": "node dist/src/app.js",
-    "dev": "nodemon --exec sucrase-node src/app.ts"
+    "dev": "nodemon --exec sucrase-node src/app.ts",
+    "lint": "eslint . --ext js,ts",
+    "lint:fix": "eslint --fix . --ext js,ts",
+    "type-check": "tsc --project tsconfig.json --pretty --noEmit",
+    "build": "tsc",
+    "prepare": "husky install"
   },
   "dependencies": {
     "cors": "2.8.5",
     "dotenv": "16.0.0",
     "fastify": "4.0.0-alpha.3",
     "fastify-cors": "6.0.3",
-    "module-alias": "2.2.2",
-    "remove": "^0.1.5"
+    "module-alias": "2.2.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.2.3",
-    "@commitlint/config-conventional": "^16.2.1",
     "@types/cors": "2.8.12",
     "@types/dotenv": "8.2.0",
     "@types/module-alias": "2.0.1",
@@ -42,6 +44,7 @@
     "eslint-plugin-jest": "26.1.4",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "6.0.0",
+    "husky": "7.0.4",
     "nodemon": "2.0.15",
     "standard": "16.0.4",
     "sucrase": "3.21.0",
