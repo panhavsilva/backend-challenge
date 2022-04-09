@@ -2,6 +2,7 @@ import fastifyCors from 'fastify-cors'
 import fastify from 'fastify'
 
 const app = fastify({ logger: true })
+const PORT = 'PORT'
 
 app.register(fastifyCors, { origin: true })
 
@@ -11,7 +12,7 @@ app.get('/', (_request, reply) => {
 
 export const start = async () => {
   try {
-    await app.listen({ port: +(process.env.PORT ?? 3000) })
+    await app.listen({ port: +(process.env[PORT] ?? 3000) })
   } catch (err) {
     app.log.error(err)
     process.exit(1)
