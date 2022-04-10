@@ -21,6 +21,7 @@
     "server": "nodemon --exec sucrase-node src/app.ts",
     "clean:db": "docker-compose down --volumes --remove-orphans",
     "migrate": "prisma migrate dev --name",
+    "migration:prod": "prisma migrate deploy",
     "docker:up": "docker-compose up -d",
     "docker:down": "docker-compose down",
     "docker:destroy": "docker-compose down --volumes --remove-orphans",
