@@ -1,14 +1,14 @@
 import fastifyCors from 'fastify-cors'
 import fastify from 'fastify'
 
-const app = fastify({ logger: true })
+export const app = fastify({ logger: true })
 const PORT = 'PORT'
 
-app.register(fastifyCors, { origin: true })
-
-app.get('/', (_request, reply) => {
+app.get('/products/:id', (_request, reply) => {
   reply.send({ hello: 'world' })
 })
+
+app.register(fastifyCors, { origin: true })
 
 export const start = async () => {
   try {
