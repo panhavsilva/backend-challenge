@@ -33,8 +33,11 @@
     "test:watch": "jest --watch",
     "test:integration": "jest --passWithNoTests --config jest.config.integration.js",
     "test:integration:watch": "yarn test:integration --watch",
-    "build": "tsc",
+    "build": "yarn tsc",
     "prepare": "husky install"
+  },
+  "prisma": {
+    "seed": "ts-node src/ports/db-in-memory/seed.ts"
   },
   "dependencies": {
     "cors": "2.8.5",

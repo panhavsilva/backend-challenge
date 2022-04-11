@@ -12,7 +12,7 @@ export const getSingleProduct = async (req: Request, res: Response) => {
 
     if (singleProduct === null) {
       return res.status(404)
-        .json(createErrorMessage('Product not found!'))
+        .json(createErrorMessage('Produto não encontrado!'))
     }
 
     return res.json(singleProduct)
@@ -20,6 +20,6 @@ export const getSingleProduct = async (req: Request, res: Response) => {
     console.log('Error: ', error)
 
     return res.status(400)
-      .json(createErrorMessage('Produto não encontrado!'))
+      .json(createErrorMessage('Erro ao procurar produto.'))
   }
 }
