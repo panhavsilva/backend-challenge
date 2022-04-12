@@ -15,8 +15,12 @@ export const getSingleProductInDB = async (id: string | undefined) => {
   return singleProduct
 }
 
-export const getAllProductsInDB = async () => {
+export const getAllProductsInDB = async (page: number) => {
+  const take = 5
+  const skip = (page - 1) * take
   const products = await prisma.products.findMany({
+    take,
+    skip,
     select: {
       title: true,
       price: true,
@@ -32,8 +36,12 @@ export const getAllProductsInDB = async () => {
   return products
 }
 
-export const getAllProductsCategoryInDB = async (filter: string) => {
+export const getAllProductsCategoryInDB = async (filter: string, page: number) => {
+  const take = 5
+  const skip = (page - 1) * take
   const products = await prisma.products.findMany({
+    take,
+    skip,
     where: {
       category: filter,
     },
@@ -52,8 +60,12 @@ export const getAllProductsCategoryInDB = async (filter: string) => {
   return products
 }
 
-export const getAllProductsPriceInDB = async (filter: number) => {
+export const getAllProductsPriceInDB = async (filter: number, page: number) => {
+  const take = 5
+  const skip = (page - 1) * take
   const products = await prisma.products.findMany({
+    take,
+    skip,
     where: {
       price: filter,
     },
@@ -72,8 +84,12 @@ export const getAllProductsPriceInDB = async (filter: number) => {
   return products
 }
 
-export const getAllProductsTitleInDb = async (filter: string) => {
+export const getAllProductsTitleInDb = async (filter: string, page: number) => {
+  const take = 5
+  const skip = (page - 1) * take
   const products = await prisma.products.findMany({
+    take,
+    skip,
     where: {
       title: {
         contains: filter,
@@ -94,8 +110,12 @@ export const getAllProductsTitleInDb = async (filter: string) => {
   return products
 }
 
-export const getAllProductsDescriptionInDB = async (filter: string) => {
+export const getAllProductsDescriptionInDB = async (filter: string, page: number) => {
+  const take = 5
+  const skip = (page - 1) * take
   const products = await prisma.products.findMany({
+    take,
+    skip,
     where: {
       description: {
         contains: filter,

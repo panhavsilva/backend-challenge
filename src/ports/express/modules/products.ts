@@ -21,9 +21,11 @@ export const getSingleProduct = async (req: Request, res: Response) => {
       .json(createErrorMessage('Erro ao procurar produto.'))
   }
 }
-export const getAllProducts = async (_req: Request, res: Response) => {
+export const getAllProducts = async (req: Request, res: Response) => {
+  const query = 'page'
+  const page = Number(req.query[query])
   try {
-    const products = await DB.getAllProductsInDB()
+    const products = await DB.getAllProductsInDB(page)
 
     if (products === null) {
       return res.status(404)
@@ -40,8 +42,10 @@ export const getAllProducts = async (_req: Request, res: Response) => {
 }
 
 export const getAllProductsCategory = async (req: Request, res: Response) => {
-  const query = 'filter'
-  const filter = String(req.query[query])
+  const queryFilter = 'filter'
+  const queryPage = 'page'
+  const filter = String(req.query[queryFilter])
+  const page = Number(req.query[queryPage])
 
   if (isValidCategory(req) === false) {
     return res.status(404)
@@ -49,7 +53,7 @@ export const getAllProductsCategory = async (req: Request, res: Response) => {
   }
 
   try {
-    const products = await DB.getAllProductsCategoryInDB(filter)
+    const products = await DB.getAllProductsCategoryInDB(filter, page)
 
     if (products === null) {
       return res.status(404)
@@ -66,8 +70,10 @@ export const getAllProductsCategory = async (req: Request, res: Response) => {
 }
 
 export const getAllProductsPrice = async (req: Request, res: Response) => {
-  const query = 'filter'
-  const filter = Number(req.query[query]) ?? 0
+  const queryFilter = 'filter'
+  const queryPage = 'page'
+  const filter = Number(req.query[queryFilter]) ?? 0
+  const page = Number(req.query[queryPage])
 
   if (isNumber(req) === false) {
     return res.status(404)
@@ -75,7 +81,7 @@ export const getAllProductsPrice = async (req: Request, res: Response) => {
   }
 
   try {
-    const products = await DB.getAllProductsPriceInDB(filter)
+    const products = await DB.getAllProductsPriceInDB(filter, page)
 
     if (products === null) {
       return res.status(404)
@@ -92,11 +98,13 @@ export const getAllProductsPrice = async (req: Request, res: Response) => {
 }
 
 export const getAllProductsTitle = async (req: Request, res: Response) => {
-  const query = 'filter'
-  const filter = String(req.query[query])
+  const queryFilter = 'filter'
+  const queryPage = 'page'
+  const filter = String(req.query[queryFilter])
+  const page = Number(req.query[queryPage])
 
   try {
-    const products = await DB.getAllProductsTitleInDb(filter)
+    const products = await DB.getAllProductsTitleInDb(filter, page)
 
     if (products === null) {
       return res.status(404)
@@ -113,11 +121,13 @@ export const getAllProductsTitle = async (req: Request, res: Response) => {
 }
 
 export const getAllProductsDescription = async (req: Request, res: Response) => {
-  const query = 'filter'
-  const filter = String(req.query[query])
+  const queryFilter = 'filter'
+  const queryPage = 'page'
+  const filter = String(req.query[queryFilter])
+  const page = Number(req.query[queryPage])
 
   try {
-    const products = await DB.getAllProductsDescriptionInDB(filter)
+    const products = await DB.getAllProductsDescriptionInDB(filter, page)
 
     if (products === null) {
       return res.status(404)
