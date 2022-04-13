@@ -10,9 +10,6 @@
   <a href="https://github.com/panhavsilva/backend-challenge/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
-  <a href="https://github.com/panhavsilva/backend-challenge/blob/master/LICENSE" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/github/license/panhavsilva/backend-challenge" />
-  </a>
 </p>
 
 ## :black_nib: Autor
@@ -30,23 +27,13 @@
   * [Variaveis de ambiente](#variaveis-de-ambiente)
   * [Recursos](#recursos)
   * [Deploy](#deploy)
-  * [Products](#products)
-    * [List All](#list-all-products)
-    * [Show one](#show-one-product)
-    * [Create](#create-product)
-    * [Update](#update-product)
-    * [Delete](#delete-product)
-  * [Orders](#orders)
-    * [List All](#list-all-orders)
-    * [Show one](#show-one-order)
-    * [Create](#register-order)
-    * [Update](#update-order)
-    * [Delete](#delete-order)
-  * [Cashback](#cashback)
-    * [List all](#list-all-cashback)
-    * [Create](#register-cashback)
-    * [Update](#update-cashback)
-    * [Delete](#delete-cashback)
+  * [Produtos](#products)
+    * [Listar todos os produtos](#listar-todos-os-produtos)
+    * [Pesquisar produto por ID](#pesquisar-produto-por-ID)
+    * [Pesquisar produto por categoria](#pesquisar-produto-por-categoria)
+    * [Pesquisar produto por preço](#pesquisar-produto-por-preço)
+    * [Pesquisar produto por nome](#pesquisar-produto-por-nome)
+    * [Pesquisar produto por descrição](#pesquisar-produto-por-decrição)
 <!--te-->
 
 ## Instalação
