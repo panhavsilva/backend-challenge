@@ -1,8 +1,5 @@
-export type Users = {
+export type PurchaseOrders = {
   id: String,
-  email: String,
-  username: String,
-  password: String,
-  first_name: String,
-  last_name: String,
+  user_id: String,
+  date: Date,
 }

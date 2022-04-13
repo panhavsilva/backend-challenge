@@ -33,12 +33,11 @@ CREATE TABLE "PurchaseOrders" (
 
 -- CreateTable
 CREATE TABLE "PurchaseOrderItems" (
-    "id" TEXT NOT NULL,
     "product_id" TEXT NOT NULL,
     "purchase_order_id" TEXT NOT NULL,
     "quantity" INTEGER NOT NULL,
 
-    CONSTRAINT "PurchaseOrderItems_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "PurchaseOrderItems_pkey" PRIMARY KEY ("purchase_order_id")
 );
 
 -- CreateIndex

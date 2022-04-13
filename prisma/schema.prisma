@@ -36,10 +36,11 @@ model PurchaseOrders {
 }
 
 model PurchaseOrderItems {
-  id                String          @id @default(uuid())
   product           Products        @relation("ProductId", fields: [product_id], references: [id])
   product_id        String
   order             PurchaseOrders  @relation("OrderId", fields: [purchase_order_id], references: [id])
   purchase_order_id String
   quantity          Int
+
+  @@id([purchase_order_id])
 }

@@ -57,7 +57,7 @@ export const getAllProductsCategory = async (req: Request, res: Response) => {
 
     if (products === null) {
       return res.status(404)
-        .json(createErrorMessage(`Categoria ${filter} não encontrada!`))
+        .json(createErrorMessage('Categoria invalida!'))
     }
 
     return res.json(products)
@@ -85,7 +85,7 @@ export const getAllProductsPrice = async (req: Request, res: Response) => {
 
     if (products === null) {
       return res.status(404)
-        .json(createErrorMessage(`Nenhum produto encontrado com o preço de ${filter}!`))
+        .json(createErrorMessage('Não é um preço valido'))
     }
 
     return res.json(products)

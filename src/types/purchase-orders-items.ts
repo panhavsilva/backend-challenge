@@ -1,5 +1,5 @@
-export type PurchaseOrdersItms = {
-  id: String,
-  user_id: String,
-  date: Date,
+export type PurchaseOrdersItems = {
+  product_id: String,
+  purchase_order_id: String,
+  quantity: Number,
 }

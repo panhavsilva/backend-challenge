@@ -1,19 +1,14 @@
 import { Router } from 'express'
-import {
-  getSingleProduct,
-  getAllProductsCategory,
-  getAllProducts,
-  getAllProductsPrice,
-  getAllProductsTitle,
-  getAllProductsDescription,
-} from './modules'
+import * as E from './modules'
 const routes = Router()
 
-routes.get('/product/:id', getSingleProduct)
-routes.get('/products', getAllProducts)
-routes.get('/products/category', getAllProductsCategory)
-routes.get('/products/price', getAllProductsPrice)
-routes.get('/products/title', getAllProductsTitle)
-routes.get('/products/description', getAllProductsDescription)
+routes.get('/product/:id', E.getSingleProduct)
+routes.get('/products', E.getAllProducts)
+routes.get('/products/category', E.getAllProductsCategory)
+routes.get('/products/price', E.getAllProductsPrice)
+routes.get('/products/title', E.getAllProductsTitle)
+routes.get('/products/description', E.getAllProductsDescription)
+
+routes.get('/order/:id', E.getSingleOrder)
 
 export default routes
